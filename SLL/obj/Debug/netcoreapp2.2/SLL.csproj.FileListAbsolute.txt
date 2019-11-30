@@ -1,0 +1,11 @@
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/bin/Debug/netcoreapp2.2/SLL.deps.json
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/bin/Debug/netcoreapp2.2/SLL.runtimeconfig.json
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/bin/Debug/netcoreapp2.2/SLL.runtimeconfig.dev.json
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/bin/Debug/netcoreapp2.2/SLL.dll
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/bin/Debug/netcoreapp2.2/SLL.pdb
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/obj/Debug/netcoreapp2.2/SLL.csprojAssemblyReference.cache
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/obj/Debug/netcoreapp2.2/SLL.csproj.CoreCompileInputs.cache
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/obj/Debug/netcoreapp2.2/SLL.AssemblyInfoInputs.cache
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/obj/Debug/netcoreapp2.2/SLL.AssemblyInfo.cs
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/obj/Debug/netcoreapp2.2/SLL.dll
+/Users/andriiivanytskyi/Desktop/ASP.NET/SLL/obj/Debug/netcoreapp2.2/SLL.pdb
