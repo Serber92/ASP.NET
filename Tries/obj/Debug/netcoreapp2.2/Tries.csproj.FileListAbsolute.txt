@@ -1,0 +1,11 @@
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/bin/Debug/netcoreapp2.2/Tries.deps.json
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/bin/Debug/netcoreapp2.2/Tries.runtimeconfig.json
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/bin/Debug/netcoreapp2.2/Tries.runtimeconfig.dev.json
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/bin/Debug/netcoreapp2.2/Tries.dll
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/bin/Debug/netcoreapp2.2/Tries.pdb
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/obj/Debug/netcoreapp2.2/Tries.csprojAssemblyReference.cache
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/obj/Debug/netcoreapp2.2/Tries.csproj.CoreCompileInputs.cache
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/obj/Debug/netcoreapp2.2/Tries.AssemblyInfoInputs.cache
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/obj/Debug/netcoreapp2.2/Tries.AssemblyInfo.cs
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/obj/Debug/netcoreapp2.2/Tries.dll
+/Users/andriiivanytskyi/Desktop/ASP.NET/Tries/obj/Debug/netcoreapp2.2/Tries.pdb
