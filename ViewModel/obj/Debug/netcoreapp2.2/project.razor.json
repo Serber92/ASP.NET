@@ -2961,11 +2961,6 @@
   "RootNamespace": "ViewModel",
   "Documents": [
     {
-      "FilePath": "/Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views/Home/Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/Views/Shared/_CookieConsentPartial.cshtml",
       "TargetPath": "Views/Shared/_CookieConsentPartial.cshtml",
       "FileKind": "mvc"
@@ -2988,6 +2983,11 @@
     {
       "FilePath": "/Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/Views/Shared/Error.cshtml",
       "TargetPath": "Views/Shared/Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/Views/Home/Info.cshtml",
+      "TargetPath": "Views/Home/Info.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -13,17 +13,13 @@ namespace ViewModel.Controllers
     {
         public IActionResult Index()
         {
-            User someUser = new User()
-            {
-                FirstName = "Sally",
-                LastName = "Sanderson"
-            };
-            return View(someUser);
+            return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost("post_info")]
+        public IActionResult Info(User Info)
         {
-            return View();
+            return View(Info);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

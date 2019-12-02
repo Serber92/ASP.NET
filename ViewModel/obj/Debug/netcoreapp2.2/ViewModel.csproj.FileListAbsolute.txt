@@ -15,7 +15,6 @@
 /Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/ViewModel.TagHelpers.output.cache
 /Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/ViewModel.RazorCoreGenerate.cache
 /Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/Razor/Views/Home/Index.g.cshtml.cs
-/Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/Razor/Views/Home/Privacy.g.cshtml.cs
 /Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/Razor/Views/Shared/Error.g.cshtml.cs
 /Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_CookieConsentPartial.g.cshtml.cs
 /Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/Razor/Views/Shared/_Layout.g.cshtml.cs
@@ -28,3 +27,4 @@
 /Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/ViewModel.dll
 /Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/ViewModel.pdb
 /Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/ViewModel.csproj.CopyComplete
+/Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/obj/Debug/netcoreapp2.2/Razor/Views/Home/Info.g.cshtml.cs
