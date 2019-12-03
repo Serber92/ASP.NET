@@ -3,14 +3,14 @@
 }
 @model Users.Models.User
 
-<h1>@ViewData["Title"]</h1>
-
 <h1>Info:</h1>
 <h1>@Model.Name</h1>
 <h1>@Model.Location</h1>
 <h1>@Model.Language</h1>
 <h1>@Model.Message</h1>
 
+
+<partial name="_partial" model="Model"/>
 
 
 <!-- Optional JavaScript -->

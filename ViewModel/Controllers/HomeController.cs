@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ViewModel.Models;
 using Users.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace ViewModel.Controllers
 {
@@ -13,6 +14,7 @@ namespace ViewModel.Controllers
     {
         public IActionResult Index()
         {
+            HttpContext.Session.SetString("UserName", "Pidr");
             return View();
         }
         public IActionResult Info(User Info)

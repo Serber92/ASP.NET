@@ -2981,6 +2981,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/Views/Shared/_partial.cshtml",
+      "TargetPath": "Views/Shared/_partial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/andriiivanytskyi/Desktop/ASP.NET/ViewModel/Views/Shared/Error.cshtml",
       "TargetPath": "Views/Shared/Error.cshtml",
       "FileKind": "mvc"
