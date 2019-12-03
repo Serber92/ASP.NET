@@ -1,0 +1,43 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+@Html.ValidationSummary()
+<center>
+    <div class="card" style="width: 50%;">
+    <div class="card-body">
+        <form asp-action='Info' asp-controller="Home" method="POST">
+        <div class="form-group">
+            <span asp-validation-for="FirstName"></span>
+            <label class="float-left" asp-for="FirstName"></label>
+            <input class="form-control" asp-for="FirstName"> 
+
+            <span asp-validation-for="LastName"></span>
+            <label class="float-left" asp-for="LastName"></label>
+            <input class="form-control" asp-for="LastName">
+
+            <span asp-validation-for="Age"></span>
+            <label class="float-left" asp-for="Age"></label>
+            <input class="form-control" asp-for="Age">
+
+            <span asp-validation-for="Email"></span>
+            <label class="float-left" asp-for="Email"></label>
+            <input class="form-control" asp-for="Email">
+
+            <span asp-validation-for="Password"></span>
+            <label class="float-left" asp-for="Password"></label>
+            <input class="form-control" asp-for="Password">
+        </div>   
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    </div>
+</center>

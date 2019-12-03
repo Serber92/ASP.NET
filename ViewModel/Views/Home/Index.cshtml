@@ -1,5 +1,4 @@
-﻿@using Users.Models
-@model User
+﻿@model User
 
 
 @{
@@ -12,17 +11,19 @@
 <br>
 <br>
 <br>
+@Html.ValidationSummary()
 <center>
     <div class="card" style="width: 50%;">
     <div class="card-body">
-        <form action='post_info' method="POST">
+        <form asp-action='Info' asp-controller="Home" method="POST">
         <div class="form-group">
-            <label class="float-left" for="name">Name</label>
-            <input class="form-control" id="name" name="Name"> 
+            <span asp-validation-for="Name"></span>
+            <label class="float-left" asp-for="Name"></label>
+            <input class="form-control" asp-for="Name"> 
         </div>   
         <label class="float-left" for="location">Location</label>      
         <div class="input-group mb-3">
-            <select class="custom-select" id="location" name="Location">
+            <select class="custom-select" id="location" asp-for="Location">
             <option selected>Choose...</option>
             <option value="Moscow">Moscow</option>
             <option value="Kiev">Kiev</option>
@@ -31,7 +32,7 @@
         </div>
         <label class="float-left" for="language">Language</label>      
         <div class="input-group mb-3">
-            <select class="custom-select" id="language" name="Language">
+            <select class="custom-select" id="language" asp-for="Language">
             <option selected>Choose...</option>
             <option value="C#">C#</option>
             <option value="Japanese">Japanese</option>
@@ -42,7 +43,7 @@
             <div class="input-group-prepend">
             <span class="input-group-text">Message</span>
             </div>
-            <textarea class="form-control" aria-label="With textarea" name="Message"></textarea>
+            <textarea class="form-control" aria-label="With textarea" asp-for="Message"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         </form>

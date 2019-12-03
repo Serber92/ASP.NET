@@ -15,11 +15,17 @@ namespace ViewModel.Controllers
         {
             return View();
         }
-
-        [HttpPost("post_info")]
         public IActionResult Info(User Info)
         {
-            return View(Info);
+            if (ModelState.IsValid)
+                return View(Info);
+            else
+            {
+                Console.WriteLine("***********************************");
+                Console.WriteLine(ModelState["isValid"]);
+                Console.WriteLine("***********************************");
+                return View("Index");
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
