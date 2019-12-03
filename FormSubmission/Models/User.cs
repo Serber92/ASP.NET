@@ -3,6 +3,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Users.Models
 {
+
+  public class DOBnotPastAttribute : ValidationAttribute
+  {
+    protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+    {
+      int isLater = DateTime.Compare((DateTime)value, DateTime.Today);
+      if (isLater > 0)
+        return new ValidationResult("Cant use future date");
+      return ValidationResult.Success;
+    }
+  }
   public class User
   {
     [Display(Name = "First Name")]
@@ -29,5 +40,10 @@ namespace Users.Models
     [Required]
     [DataType(DataType.Password)]
     public string Password { get; set; }
+
+    [Display(Name = "Date of Birth")]
+    [Required]
+    [DOBnotPast]
+    public DateTime DOB { get; set; }
   }
 }
