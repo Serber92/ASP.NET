@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h3 class="d-inline">Happiness: <span id="happiness">@ViewBag.happiness</span></h3>
+<h3 class="d-inline">Fullness: <span id="fullness">@ViewBag.fullness</span></h3>
+<h3 class="d-inline">Energy: <span id="energy">50</span></h3>
+<h3 class="d-inline">Meals: <span id="meals">3</span></h3>
+
+<h4 id="message"></h4>
+<div id="buttons">
+    <button id="1" type="button" class="btn btn-primary"> Feed </button>
+    <button id="2" type="button" class="btn btn-primary"> Play </button>
+    <button id="3" type="button" class="btn btn-primary"> Work </button>
+    <button id="4" type="button" class="btn btn-primary"> Sleep </button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#1").click(function(){
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:5000/feed",
+                success: function(result){
+                    if ($("#meals").text().toString() > 0){
+                        $("#fullness").html(result);
+                        $("#meals").html($("#meals").text().toString()-1)
+                    }
+                    else
+                    {
+                        alert("Out of meal");
+                    }
+                }
+            })
+        });
+        $("#2").click(function(){
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:5000/play",
+                success: function(result){
+                    if ($("#energy").text().toString() > 0){
+                        $("#happiness").html(result);
+                        $("#energy").html($("#energy").text().toString()-5)
+                    }
+                    else
+                    {
+                        alert("Tired, no energy");
+                    }
+                }
+            })
+        });
+        $("#3").click(function(){
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:5000/work",
+                data: $("#meals").text().toString(),
+                datatype: "JSON",
+                success: function(result){
+                    if ($("#energy").text().toString() > 0){
+                        $("#meals").html(result);
+                        $("#energy").html($("#energy").text().toString()-5)
+                    }
+                    else
+                    {
+                        alert("Tired, no energy");
+                    }
+                }
+            })
+        });
+        $("#4").click(function(){
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:5000/feed",
+                success: function(result){
+        
+                }
+            })
+        });
+    })
+</script>
