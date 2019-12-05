@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "Info";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h2>Name: @ViewBag.Dish.Name</h2>
+<h2>Calories: @ViewBag.Dish.Calories</h2>
+<h2>Tastiness: @ViewBag.Dish.Tastiness</h2>
+<h2>Description: @ViewBag.Dish.Description</h2>
+
+<a class="btn btn-primary" href="delete/@ViewBag.Dish.Id">Delete</a>
+<a class="btn btn-primary" href="edit/@ViewBag.Dish.Id">Edit</a>

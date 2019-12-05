@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Edit a Dish";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form asp-controller="Home" asp-action="AddDishProcess">
+  <div class="form-group">
+    <label>Chef's Name</label>
+    <input class="form-control" name="ChefsName" value=@ViewBag.Dish.Chef>
+
+    <label>Name of Dish</label>
+    <input class="form-control" name="DishName" value=@ViewBag.Dish.Name>
+
+    <label>Number of Calories</label>
+    <input class="form-control" name="Calories" value=@ViewBag.Dish.Calories>
+
+    <label>Tastiness</label>
+    <input class="form-control" name="Tastiness" value=@ViewBag.Dish.Tastiness>
+
+    <label>Description</label>
+    <textarea class="form-control" rows="3" name="Description">@ViewBag.Dish.Description</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Add a Dish</button>
+</form>

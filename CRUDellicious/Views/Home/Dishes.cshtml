@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Dishes";
+}
+
+<h1>@ViewData["Title"]</h1>
+<ol>
+    @{
+        foreach (var dish in @ViewBag.dishes)
+        {
+            <li><a href="@dish.Id">@dish.Name</a> by @dish.Chef</li>
+        }
+    }
+</ol>
