@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Registration";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model IndexViewModel
+
+<form asp-action="RegistrationProcess" asp-controller="Home" method="POST">
+  <div class="form-group">
+    <span asp-validation-for="NewUser.FirstName"></span>
+    <label asp-for="NewUser.FirstName">First Name</label>
+    <input asp-for="NewUser.FirstName" class="form-control">
+      
+    <span asp-validation-for="NewUser.LastName"></span>
+    <label asp-for="NewUser.LastName">Last Name</label>
+    <input asp-for="NewUser.LastName" class="form-control">
+
+    <span asp-validation-for="NewUser.Email"></span>
+    <label asp-for="NewUser.Email">Email address</label>
+    <input asp-for="NewUser.Email" type="email" class="form-control" aria-describedby="emailHelp">
+
+    <span asp-validation-for="NewUser.Password"></span>
+    <label asp-for="NewUser.Password">Password</label>
+    <input asp-for="NewUser.Password" type="password" class="form-control">
+
+    <span asp-validation-for="NewUser.ConfirmPassword"></span>
+    <label asp-for="NewUser.ConfirmPassword">Confirm Password</label>
+    <input asp-for="NewUser.ConfirmPassword" type="password" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
