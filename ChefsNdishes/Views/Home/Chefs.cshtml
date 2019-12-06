@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Chefs";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col"># of Dishes</th>
+    </tr>
+  </thead>
+  <tbody>
+      @{ 
+        foreach (Chef chef in @ViewBag.AllChefs)
+        {
+            <tr>
+            <td>@chef.FirstName @chef.LastName</td>
+            <td>
+                @{if (@Convert.ToDateTime(chef.DOB).Date > DateTime.Today.AddYears(-(DateTime.Today.Year-Convert.ToDateTime(chef.DOB).Year)))
+                            {
+                              @(DateTime.Today.AddYears(-1).Year-Convert.ToDateTime(chef.DOB).Year)
+                            }
+                  else
+                  {
+                      @(DateTime.Today.Year-Convert.ToDateTime(chef.DOB).Year)
+                  }
+                }
+            </td>
+            <td>@chef.HasDish.Count</td>
+            </tr>
+        }
+      }
+  </tbody>
+</table>

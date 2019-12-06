@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Add Dish";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@model Dish
+<form asp-action="AddDishProcess" asp-controller="Home" method="POST">
+    <div class="form-group">
+        <label asp-for="Name">Name of Dish</label>
+        <input asp-for="Name" class="form-control">
+
+        <label asp-for="Calories"># of Calories</label>
+        <input asp-for="Calories" class="form-control">
+
+        <label asp-for="Tastiness">Tastiness</label>
+        <input asp-for="Tastiness" class="form-control">
+
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text">Chef</label>
+        </div>
+        <select asp-for="ChefId" class="custom-select">
+            <option selected>Choose chef</option>
+            @{
+                foreach (Chef chef in @ViewBag.AllChefs)
+                {
+                    <option value="@chef.ChefId">@chef.FirstName @chef.LastName</option>
+                }
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
