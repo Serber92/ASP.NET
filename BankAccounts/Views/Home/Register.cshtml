@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+@using UserTransactionNamespace.Models
+@model IndexViewModel
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-controller="Home" asp-action="RegisterProcess">
+    <div class="form-group">
+        <span asp-validation-for="NewUser.FirstName"></span>
+        <label>First Name</label>
+        <input asp-for="NewUser.FirstName" class="form-control">
+
+        <span asp-validation-for="NewUser.LastName"></span>
+        <label>Last Name</label>
+        <input asp-for="NewUser.LastName" class="form-control">
+
+        <span asp-validation-for="NewUser.Email"></span>
+        <label>Email Address</label>
+        <input asp-for="NewUser.Email" class="form-control" type="email" aria-describedby="emailHelp">
+
+        <span asp-validation-for="NewUser.Password"></span>
+        <label>Password</label>
+        <input asp-for="NewUser.Password" type="password" class="form-control">
+
+        <span asp-validation-for="NewUser.ConfirmPassword"></span>
+        <label>Confirm Password</label>
+        <input asp-for="NewUser.ConfirmPassword" type="password" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>

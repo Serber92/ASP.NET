@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Account";
+}
+
+@model CompleteUserNamespace.Models.CompleteUser
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>User: @Model.UserItself.FirstName @Model.UserItself.LastName</h3>
+@{
+    int total = 0;
+    foreach (var transaction in @Model.UserTransaction)
+    {
+        total += transaction.Amount;
+    }
+}
+<h4>Balance: @total</h4>
+<h4>@ViewBag.TransactionStatusMessage</h4>
+
+<table class="table">
+<thead>
+    <tr>
+    <th scope="col">Amount</th>
+    <th scope="col">Date</th>
+    </tr>
+</thead>
+<tbody>
+    @{
+        foreach (var transaction in @Model.UserTransaction)
+        {
+            <tr>
+            <td>@transaction.Amount</td>
+            <td>@transaction.CreatedAt</td>
+            </tr>
+        }
+    }
+</tbody>
+</table>
+
+<br>
+<br>
+<hr>
+<form asp-controller="Home" asp-action="AddTransactionProcess">
+    <div class="form-group">
+        <label>Initiate Transaction</label>
+        <input class="form-control" name="TransactionAmount">
+    </div>
+    <button type="submit" class="btn btn-primary">Proceed</button>
+</form>

@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+@using UserTransactionNamespace.Models
+@model IndexViewModel
+
+<h1>@ViewData["Title"]</h1>
+
+<h2>@ViewBag.Message</h2>
+
+<form asp-controller="Home" asp-action="LoginProcess">
+    <div class="form-group">
+        <span asp-validation-for="NewLogin.Email"></span>
+        <label>Email Address</label>
+        <input asp-for="NewLogin.Email" class="form-control" type="email" aria-describedby="emailHelp">
+
+        <span asp-validation-for="NewLogin.Password"></span>
+        <label>Password</label>
+        <input asp-for="NewLogin.Password" type="password" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
