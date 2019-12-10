@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Product info";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model ProductCategoryWraper
+
+<h2>@Model.Product.Name</h2>
+
+<hr>
+<div class="d-inline" style="width: 48%; float:left">
+  <h3>Categories: </h3>
+  <ul>
+    @{
+        foreach (var sub in @Model.Product.Category)
+        {
+            <li>
+              @sub.Category.Name
+            </li>
+        }
+    }
+  </ul>
+</div>
+<div class="d-inline" style="width: 48%; float:right">
+  <h3>Add Category: </h3>
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+  </div>
+  <form asp-controller="Home" asp-action="AddCategoryToProduct">
+    <select class="custom-select" name="CategoryId">
+      @{
+        foreach (var category in @Model.Categories)
+        {
+            <option value="@category.CategoryId">@category.Name</option>
+        }
+      }
+    </select>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>

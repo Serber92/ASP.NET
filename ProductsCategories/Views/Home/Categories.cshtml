@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Categories";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model AllCategories
+
+<div class="d-inline" style="width: 48%; float:left">
+  <form  asp-controller="Home" asp-action="AddCategoryProcess" method="POST">
+    <div class="form-group">
+        <span asp-validation-for="Category.Name"></span>
+        <label asp-for="Category.Name">Name</label>
+        <input class="form-control" asp-for="Category.Name">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div class="d-inline" style="width: 48%; float:right">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Existing Products</th>
+    </tr>
+  </thead>
+  <tbody>
+    @{
+        foreach (Category category in @Model.Categories)
+        {
+        <tr>
+            <td>
+              <a href="CategoryInfo/@category.CategoryId">@category.Name</a>
+            </td>
+        </tr>
+        }
+    }
+  </tbody>
+</table>
+</div>
+
+

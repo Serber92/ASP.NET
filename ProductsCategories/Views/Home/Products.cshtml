@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Products";
+}
+<h1>@ViewData["Title"]</h1>
+
+ @model AllProducts 
+
+<div class="d-inline" style="width: 48%; float:left">
+  <form  asp-controller="Home" asp-action="AddProductProcess" method="POST">
+    <div class="form-group">
+        <span asp-validation-for="Product.Name"></span>
+        <label asp-for="Product.Name">Name</label>
+        <input class="form-control" asp-for="Product.Name">
+
+        <span asp-validation-for="Product.Description"></span>
+        <label asp-for="Product.Description">Description</label>
+        <input class="form-control" asp-for="Product.Description">
+
+        <span asp-validation-for="Product.Price"></span>
+        <label asp-for="Product.Price">Price</label>
+        <input class="form-control" asp-for="Product.Price">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div class="d-inline" style="width: 48%; float:right">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Existing Products</th>
+    </tr>
+  </thead>
+  <tbody>
+    @{
+        foreach (Product product in @Model.Products)
+        {
+          <tr>
+            <td>
+              <a href="ProductInfo/@product.ProductId">@product.Name</a>
+              </td>
+          </tr>
+        }
+    }
+  </tbody>
+</table>
+</div>
+
+
