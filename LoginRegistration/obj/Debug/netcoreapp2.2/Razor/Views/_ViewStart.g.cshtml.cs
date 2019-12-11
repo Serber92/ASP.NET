@@ -24,12 +24,17 @@ using LoginRegistration.Models;
 #line default
 #line hidden
 #line 4 "/Users/andriiivanytskyi/Desktop/ASP.NET/LoginRegistration/Views/_ViewImports.cshtml"
+using WeddingWrapperNamespace.Models;
+
+#line default
+#line hidden
+#line 5 "/Users/andriiivanytskyi/Desktop/ASP.NET/LoginRegistration/Views/_ViewImports.cshtml"
 using IndexViewModelNamespace.Models;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"18b4724c2de0fbe52d34bba91829c8df0fd53bcf", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3c96bb58b84e9847f07d1af38f0dac4f65f19594", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

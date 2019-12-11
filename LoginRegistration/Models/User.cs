@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using AssociationsNamespace.Models;
+using System.Collections.Generic;
 
 namespace UserNamespace.Models
 {
@@ -23,6 +25,9 @@ namespace UserNamespace.Models
     [Compare("Password")]
     [DataType(DataType.Password)]
     public string ConfirmPassword {get; set; }
+    public DateTime CreatedAt {set; get; } = DateTime.Today;
+    public DateTime UpdatedAt {get; set; } = DateTime.Today;
+    public List<Associations> WeddingsAttending {get; set; }
   }
 }
 

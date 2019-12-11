@@ -2966,8 +2966,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/andriiivanytskyi/Desktop/ASP.NET/LoginRegistration/Views/Home/Success.cshtml",
-      "TargetPath": "Views/Home/Success.cshtml",
+      "FilePath": "/Users/andriiivanytskyi/Desktop/ASP.NET/LoginRegistration/Views/Home/WeddingInfo.cshtml",
+      "TargetPath": "Views/Home/WeddingInfo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/andriiivanytskyi/Desktop/ASP.NET/LoginRegistration/Views/Home/NewWedding.cshtml",
+      "TargetPath": "Views/Home/NewWedding.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/andriiivanytskyi/Desktop/ASP.NET/LoginRegistration/Views/Home/Dashboard.cshtml",
+      "TargetPath": "Views/Home/Dashboard.cshtml",
       "FileKind": "mvc"
     },
     {

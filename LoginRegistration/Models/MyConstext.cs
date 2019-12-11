@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using UserNamespace.Models;
+using WeddingNamespace.Models;
+using AssociationsNamespace.Models;
 
 namespace Context.Models
 {
@@ -9,5 +11,7 @@ namespace Context.Models
     public MyContext(DbContextOptions options) : base(options) { }
 
     public DbSet<User> Users { get; set; }
+    public DbSet<Wedding> Weddings { get; set; }
+    public DbSet<Associations> Associations { get; set; }
   }
 }

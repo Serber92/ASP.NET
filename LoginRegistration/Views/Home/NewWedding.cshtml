@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "New Wedding";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model WeddingWrapper
+
+<form asp-controller="Home" asp-action="NewWeddingProcess" method="POST">
+  <div class="form-group">
+    <label>Wedder One</label>
+    <select class="custom-select" asp-for="Wedding.User1Id">
+      @{
+        foreach (var user in @Model.Users)
+        {
+            <option value="@user.UserId">@user.FirstName @user.LastName</option>
+        }
+      }
+    </select>
+
+    <label>Wedder Two</label>
+    <select class="custom-select" asp-for="Wedding.User2Id">
+      @{
+        foreach (var user in @Model.Users)
+        {
+            <option value="@user.UserId">@user.FirstName @user.LastName</option>
+        }
+      }
+    </select>
+
+    <span asp-validation-for="Wedding.Date"></span>
+    <label>Date</label>
+    <input class="form-control" asp-for="Wedding.Date">
+
+    <span asp-validation-for="Wedding.WeddingAddress"></span>
+    <label>Wedding Address</label>
+    <input class="form-control" asp-for="Wedding.WeddingAddress">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

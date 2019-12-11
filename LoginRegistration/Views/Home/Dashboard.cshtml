@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model WeddingWrapper
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Wedding</th>
+      <th scope="col">Date</th>
+      <th scope="col">Guest</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+      @{
+          foreach (var wedding in @Model.Weddings)
+          {
+            <tr>
+            <td>
+              <a href="WeddingInfo/@wedding.WeddingId">@wedding.User1.FirstName and @wedding.User2.FirstName</a>
+            </td>
+            <td>@wedding.Date</td>
+            <td>@wedding.UsersAttending.Count</td>
+            <td>
+              @{
+                if(@wedding.User2Id == @Model.User.UserId || @wedding.User1Id == @Model.User.UserId)
+                {
+                  <a href="DeleteWeddingProcess/@wedding.WeddingId">Delete</a>
+                }
+                else
+                {
+                  if(@wedding.UsersAttending.Intersect(@Model.User.WeddingsAttending).Any())
+                  {
+                    <a href="GetOutProcess/@wedding.WeddingId">Get Out</a>
+                  }
+                  else
+                  {
+                    <a href="JoinWeddingProcess/@wedding.WeddingId">Join</a>
+                  }
+                  }
+              }
+            </td>
+            </tr>
+          }
+      }
+  </tbody>
+</table>
+
+<a class="btn btn-primary" href="NewWedding" role="button">New Wedding</a>

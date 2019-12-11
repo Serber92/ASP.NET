@@ -1,0 +1,68 @@
+@{
+    ViewData["Title"] = "Wedding Info";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model WeddingWrapper
+
+<h2>Wedding for: @Model.Wedding.User1.FirstName and @Model.Wedding.User2.FirstName</h2>
+
+<h2>Date: @Model.Wedding.Date</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Guests</th>
+    </tr>
+  </thead>
+  <tbody>
+      @{
+          foreach (var sub in @Model.Wedding.UsersAttending)
+          {
+            <tr>
+            <td>
+              @sub.User.FirstName @sub.User.LastName
+            </td>
+            </tr>
+          }
+      }
+  </tbody>
+</table>
+
+<h3>Location</h3>
+<h5 id="weddingAddress">@Model.Wedding.WeddingAddress</h5>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+// Initialize and add the map
+function initMap() {
+
+  var address = $("#weddingAddress").text();
+    address = address.replace(/ /g,"+");
+
+  $.ajax({url: "https://maps.googleapis.com/maps/api/geocode/json?new_forward_geocoder=true&address=" + address + "&key=AIzaSyCu_1J1U0SMMUs6zfx0ae15-Mw1UhdSxz4", 
+  success: function(result){
+    var lat = result.results[0].geometry.location.lat
+    var lng = result.results[0].geometry.location.lng
+  
+  // The location of Uluru
+  var uluru = {lat: lat, lng: lng};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+  }});
+}
+    </script>
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCu_1J1U0SMMUs6zfx0ae15-Mw1UhdSxz4&callback=initMap">
+    </script>
+
+
+
+
