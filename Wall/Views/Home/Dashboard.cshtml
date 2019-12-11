@@ -1,0 +1,69 @@
+<div class="scroll">
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model Wrapper
+    <h2>Hello: @Model.User.FirstName</h2>
+
+    <form asp-controller="Home" asp-action="AddMessageProcess" method="POST">
+        <div class="form-group">
+            <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Post a Message</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea" asp-for="Message.Text"></textarea>
+            </div>
+        </div>
+    <button type="submit" class="btn btn-primary">Post Message</button>
+    </form>
+    <br>
+    <br>
+
+    @{
+        foreach (Message message in @Model.Messages)
+        {
+            <h4>@message.Creator.FirstName @message.Creator.LastName at @message.CreatedAt</h4>
+            <p>@message.Text</p>
+            System.TimeSpan tSpan = new System.TimeSpan(0, 0, 1, 0); 
+            System.TimeSpan Difference = @DateTime.Now - @message.CreatedAt;
+            
+            if(@Model.User.UserId == @message.Creator.UserId)
+                {
+                    if(@Difference < @tSpan)
+                    {
+                        <a class="btn btn-info" href="DeleteMessageProcess/@message.MessageId">Delete Message</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-info" href="#">Cant Delete Now</a>
+                    }
+                }
+
+                foreach (Comment comment in @Model.Comments)
+                {
+                    if(@message.Comments.Contains(@comment))
+                    {
+                        <h5 class="comment">@comment.Creator.FirstName @comment.Creator.LastName at @comment.CreatedAt</h5>
+                        <p class="comment">@comment.Text</p>
+                    }
+                }
+
+
+        <form asp-controller="Home" asp-action="AddCommentProcess" method="POST">
+            <div class="form-group comment">
+                <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Write a Comment</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea" asp-for="Comment.Text"></textarea>
+                <input type="hidden" asp-for="Comment.MessageId" value=@message.MessageId>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-secondary float-right">Post Comment</button>
+        </form>
+        }
+    }
+</div>
+
