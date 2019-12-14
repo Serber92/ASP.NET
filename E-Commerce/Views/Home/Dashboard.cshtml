@@ -1,0 +1,14 @@
+@{
+ Layout = "~/Views/Shared/_Layout_Logged.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model Wrapper
+
+<h2>Hello, @Model.Customer.FirstName</h2>
+
+

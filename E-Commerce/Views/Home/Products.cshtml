@@ -1,0 +1,56 @@
+@{
+ Layout = "~/Views/Shared/_Layout_Logged.cshtml";
+}
+
+@{
+    ViewData["Title"] = "Products";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model Wrapper
+
+
+<div class="container">
+  <div class="row">
+    <div class="w-500">
+      <form asp-asp-controller="Home" asp-action="AddProductProcess" method="POST">
+          <div class="form-group">
+              <span class="text-danger" asp-validation-for="Product.Name"></span>
+              <br>
+              <label asp-for="Product.Name">Name</label>
+              <input class="form-control" asp-for="Product.Name">
+
+              <span class="text-danger" asp-validation-for="Product.Image"></span>
+              <br>
+              <label asp-for="Product.Image">Image</label>
+              <input class="form-control" asp-for="Product.Image">
+
+              <span class="text-danger" asp-validation-for="Product.Description"></span>
+              <br>
+              <label asp-for="Product.Description">Description</label>
+              <input class="form-control" asp-for="Product.Description">
+
+              <span class="text-danger" asp-validation-for="Product.Amount"></span>
+              <br>
+              <label asp-for="Product.Amount">Amount</label>
+              <input class="form-control" asp-for="Product.Amount">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div>
+      @{
+        foreach (Product product in @Model.Products)
+        {
+            <div class="card" style="width: 18rem;">
+              <img src=@product.Image class="card-img-top" alt="product_image">
+              <div class="card-body">
+                <h5 class="card-title">@product.Name</h5>
+                <p class="card-text">@product.Description</p>
+              </div>
+            </div>
+        }
+      }
+    </div>
+  </div>
+</div>

@@ -1,10 +1,10 @@
 <div class="scroll">
-@{
-    ViewData["Title"] = "Dashboard";
-}
-<h1>@ViewData["Title"]</h1>
+    @{
+        ViewData["Title"] = "Dashboard";
+    }
+    <h1>@ViewData["Title"]</h1>
 
-@model Wrapper
+    @model Wrapper
     <h2>Hello: @Model.User.FirstName</h2>
 
     <form asp-controller="Home" asp-action="AddMessageProcess" method="POST">
@@ -16,7 +16,7 @@
             <textarea class="form-control" aria-label="With textarea" asp-for="Message.Text"></textarea>
             </div>
         </div>
-    <button type="submit" class="btn btn-primary">Post Message</button>
+        <button type="submit" class="btn btn-primary">Post Message</button>
     </form>
     <br>
     <br>
